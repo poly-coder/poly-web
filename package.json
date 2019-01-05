@@ -1,0 +1,33 @@
+{
+  "name": "poly-web",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "module": "dist/esm/index.js",
+  "main": "dist/index.js",
+  "unpkg": "dist/ionic.js",
+  "types": "dist/types/components.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve --es5",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@stencil/core": "~0.15.2",
+    "@stencil/postcss": "^0.1.0",
+    "@stencil/stylus": "^0.1.0",
+    "@types/jest": "23.3.11",
+    "@types/puppeteer": "1.6.4",
+    "autoprefixer": "^9.4.4",
+    "jest": "23.6.0",
+    "jest-cli": "23.6.0",
+    "puppeteer": "1.8.0",
+    "tailwindcss": "^0.7.3"
+  },
+  "license": "MIT"
+}
