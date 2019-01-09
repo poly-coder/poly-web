@@ -1,0 +1,63 @@
+{
+  "groups": [
+    {
+      "name": "basic",
+      "colors": {
+        "transparent": "transparent"
+      }
+    },
+    {
+      "name": "colors",
+      "colors": {
+        "white": "#f8f8f8",
+        "black": "#161616",
+        "grey": "#b8c2cc",
+        "indigo": "#6574cd",
+        "purple": "#9561e2",
+        "pink": "#f66d9b"
+      },
+      "variations": [
+        {
+          "dark": ["darken", 0.4],
+          "light": ["lighten", 0.4]
+        },
+        {
+          "fore": [
+            "compose",
+            [
+              ["negate"],
+              ["if", ["isLight"], ["Color", "white"], ["Color", "black"]],
+              ["fade", 0.1]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "semantic",
+      "colors": {
+        "default": "#dadfe4",
+        "primary": "#1d3360",
+        "secondary": "#9633b8",
+        "tertiary": "#1bbed0",
+        "accent": "#e9530d",
+        "success": "#38c172",
+        "warning": "#f6993f",
+        "error": "#e3342f",
+        "info": "#ffed4a"
+      },
+      "variations": [
+        {
+          "fore": [
+            "compose",
+            [
+              ["negate"],
+              ["if", ["isLight"], ["Color", "white"], ["Color", "black"]],
+              ["fade", 0.0]
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

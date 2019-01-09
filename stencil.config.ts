@@ -1,17 +1,27 @@
-import { Config } from '@stencil/core';
-const postcss = require('@stencil/postcss');
-const autoprefixer = require('autoprefixer');
-const sass = require('@stencil/sass');
-const tailwindcss = require('tailwindcss');
+import { Config } from "@stencil/core";
+const { postcss } = require("@stencil/postcss");
+const autoprefixer = require("autoprefixer");
+const { stylus } = require("@stencil/stylus");
+const tailwindcss = require("tailwindcss");
 
 export const config: Config = {
-  namespace: 'mycomponent',
-  outputTargets:[
-    { type: 'dist' },
-    { type: 'docs' },
+  namespace: "poly-web",
+  outputTargets: [
+    { type: "dist" },
+    { type: "docs" },
     {
-      type: 'www',
+      type: "www",
       serviceWorker: null // disable service workers
     }
+  ],
+  globalStyle: 'src/styles/global.styl',
+  plugins: [
+    stylus(),
+    postcss({
+      plugins: [
+        autoprefixer(),
+        tailwindcss("./config/tailwind.js")
+      ]
+    })
   ]
 };

@@ -40,15 +40,26 @@ export namespace Components {
     */
     'middle'?: string;
   }
+
+  interface PolyButton {
+    'color': string;
+    'disabled': boolean;
+  }
+  interface PolyButtonAttributes extends StencilHTMLAttributes {
+    'color'?: string;
+    'disabled'?: boolean;
+  }
 }
 
 declare global {
   interface StencilElementInterfaces {
     'MyComponent': Components.MyComponent;
+    'PolyButton': Components.PolyButton;
   }
 
   interface StencilIntrinsicElements {
     'my-component': Components.MyComponentAttributes;
+    'poly-button': Components.PolyButtonAttributes;
   }
 
 
@@ -58,12 +69,20 @@ declare global {
     new (): HTMLMyComponentElement;
   };
 
+  interface HTMLPolyButtonElement extends Components.PolyButton, HTMLStencilElement {}
+  var HTMLPolyButtonElement: {
+    prototype: HTMLPolyButtonElement;
+    new (): HTMLPolyButtonElement;
+  };
+
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement
+    'poly-button': HTMLPolyButtonElement
   }
 
   interface ElementTagNameMap {
     'my-component': HTMLMyComponentElement;
+    'poly-button': HTMLPolyButtonElement;
   }
 
 
