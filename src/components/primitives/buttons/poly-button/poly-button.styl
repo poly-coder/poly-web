@@ -1,0 +1,61 @@
+poly-button
+  display inline-flex
+  position relative
+  justify-content center
+  align-items center
+  user-select none
+  cursor pointer
+  margin-right 0.25rem
+  color var(--poly-button__color)
+  padding var(--poly-button__padding)
+  font-weight var(--poly-button__font-weight, 700)
+  font-size var(--poly-button__font-size)
+
+  > .poly-background
+    position absolute
+    top 0
+    left 0
+    bottom 0
+    right 0
+    z-index -1
+    background-color var(--poly-button__background)
+    transition var(--poly__transition)
+
+  > .poly-content
+    opacity var(--poly-button__opacity_normal)
+    transition var(--poly__transition)
+
+  &:hover
+  &.hover
+    > .poly-background
+      filter var(--poly-button__filter_background_hover)
+
+    > .poly-content
+      opacity var(--poly-button__opacity_hover)
+
+  &:focus
+  &.focus
+    > .poly-background
+      filter var(--poly-button__filter_background_focus)
+
+    > .poly-content
+      opacity var(--poly-button__opacity_focus)
+
+  &:active
+  &.active
+    > .poly-background
+      filter var(--poly-button__filter_background_active)
+
+    > .poly-content
+      opacity var(--poly-button__opacity_active)
+
+  &:disabled
+  &.disabled
+    pointer-events none
+    opacity var(--poly__opacity_disabled)
+    filter var(--poly-button__filter_background_disabled)
+    > .poly-background
+      opacity 1
+
+    > .poly-content
+      opacity 1

@@ -4,12 +4,178 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
-  <script src="/build/mycomponent.js"></script>
-
+  <script src="/build/poly-web.js"></script>
+  <link rel="stylesheet" href="/build/poly-web.css">
+  <style>
+    .column {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: stretch;
+    }
+    .row {
+      display: flex;
+      flex-direction: row;
+      justify-content: stretch;
+      align-items: stretch;
+      min-height: 100px;
+    }
+    .row > * {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+    .flex-grow-3 {
+      flex-grow: 3;
+    }
+    .text-uppercase {
+      text-transform: uppercase
+    }
+    #buttons.column > .row > div {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+    #buttons.column > .row > div > * {
+      margin-bottom: 0.25rem;
+    }
+  </style>
 </head>
-<body>
+<body class="text-black font-sans">
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+  <h1>Buttons</h1>
+  <div id="buttons" class="column">
+    <div class="row">
+      <div>
+        <poly-button color="white">White</poly-button>
+        <poly-button color="white" class="disabled">Disabled</poly-button>
+      </div>
+      <div>
+        <poly-button color="black">Black</poly-button>
+        <poly-button color="black" class="disabled">Disabled</poly-button>
+      </div>
+      <div>
+        <poly-button color="default">Default</poly-button>
+        <poly-button color="default" class="disabled">Disabled</poly-button>
+      </div>
+      <div>
+        <poly-button color="primary">Primary</poly-button>
+        <poly-button color="primary" class="disabled">Disabled</poly-button>
+      </div>
+      <div>
+        <poly-button color="secondary">Secondary</poly-button>
+        <poly-button color="secondary" class="disabled">Disabled</poly-button>
+      </div>
+      <div>
+        <poly-button color="tertiary">Tertiary</poly-button>
+        <poly-button color="tertiary" class="disabled">Disabled</poly-button>
+      </div>
+      <div>
+        <poly-button color="accent">Accent</poly-button>
+        <poly-button color="accent" class="disabled">Disabled</poly-button>
+      </div>
+      <div></div>
+    </div>
+    <div class="row">
+      <div>
+        <poly-button color="error">Error</poly-button>
+        <poly-button color="error" class="disabled">Disabled</poly-button>
+      </div>
+      <div>
+        <poly-button color="warning">Warning</poly-button>
+        <poly-button color="warning" class="disabled">Disabled</poly-button>
+      </div>
+      <div>
+        <poly-button color="success">Success</poly-button>
+        <poly-button color="success" class="disabled">Disabled</poly-button>
+      </div>
+      <div>
+        <poly-button color="info">Primary</poly-button>
+        <poly-button color="info" class="disabled">Disabled</poly-button>
+      </div>
+      <div>
+        <poly-button color="grey">Grey</poly-button>
+        <poly-button color="grey" class="disabled">Disabled</poly-button>
+      </div>
+      <div>
+        <poly-button color="indigo">Indigo</poly-button>
+        <poly-button color="indigo" class="disabled">Disabled</poly-button>
+      </div>
+      <div>
+        <poly-button color="purple">Purple</poly-button>
+        <poly-button color="purple" class="disabled">Disabled</poly-button>
+      </div>
+      <div>
+        <poly-button color="pink">Pink</poly-button>
+        <poly-button color="pink" class="disabled">Disabled</poly-button>
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <poly-button color="primary">Rounded</poly-button>
+        <poly-button color="primary" rounded="none">None</poly-button>
+        <poly-button color="primary" rounded="sm">Small</poly-button>
+        <poly-button color="primary" rounded="">Default</poly-button>
+        <poly-button color="primary" rounded="lg">Large</poly-button>
+        <poly-button color="primary" rounded="full">Full</poly-button>
+      </div>
+      <div>
+        <poly-button color="warning">Warning</poly-button>
+        <poly-button color="warning" class="disabled">Disabled</poly-button>
+      </div>
+      <div>
+        <poly-button color="success">Success</poly-button>
+        <poly-button color="success" class="disabled">Disabled</poly-button>
+      </div>
+      <div>
+        <poly-button color="info">Primary</poly-button>
+        <poly-button color="info" class="disabled">Disabled</poly-button>
+      </div>
+      <div>
+        <poly-button color="grey">Grey</poly-button>
+        <poly-button color="grey" class="disabled">Disabled</poly-button>
+      </div>
+      <div>
+        <poly-button color="indigo">Indigo</poly-button>
+        <poly-button color="indigo" class="disabled">Disabled</poly-button>
+      </div>
+      <div>
+        <poly-button color="purple">Purple</poly-button>
+        <poly-button color="purple" class="disabled">Disabled</poly-button>
+      </div>
+      <div>
+        <poly-button color="pink">Pink</poly-button>
+        <poly-button color="pink" class="disabled">Disabled</poly-button>
+      </div>
+    </div>
+  </div>
 
+  <h1>Colors</h1>
+  <div id="colors" class="column font-normal text-lg text-uppercase">
+    <div class="row">
+      <span class="bg-white text-white-fore">white</span>
+      <span class="bg-black text-black-fore">black</span>
+      <span class="bg-default text-default-fore">default</span>
+      <span class="bg-primary text-primary-fore">Primary</span>
+      <span class="bg-secondary text-secondary-fore">secondary</span>
+      <span class="bg-tertiary text-tertiary-fore">tertiary</span>
+      <span class="bg-accent text-accent-fore">accent</span>
+      <span class="bg-transparent text-black">transparent</span>
+    </div>
+    <div class="row">
+      <span class="bg-error text-error-fore">error</span>
+      <span class="bg-warning text-warning-fore">warning</span>
+      <span class="bg-success text-success-fore">success</span>
+      <span class="bg-info text-info-fore">info</span>
+      <span class="bg-grey text-grey-fore">grey</span>
+      <span class="bg-indigo text-indigo-fore">indigo</span>
+      <span class="bg-purple text-purple-fore">purple</span>
+      <span class="bg-pink text-pink-fore">pink</span>
+    </div>
+  </div>
 </body>
 </html>
